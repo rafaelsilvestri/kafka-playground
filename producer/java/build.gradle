@@ -1,0 +1,42 @@
+
+plugins {
+   id 'java'
+   id 'idea'
+}
+
+jar {
+    manifest {
+        attributes (
+                "Main-Class": "com.github.rafaelsilvestri.kafka.Application"
+        )
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    def jacksonVersion = '2.10.1'
+    def springVersion = '5.2.3.RELEASE'
+
+    compile('com.fasterxml.jackson.core:jackson-databind:' + jacksonVersion)
+    compile('com.fasterxml.jackson.core:jackson-core:' + jacksonVersion)
+
+    compile('org.springframework:spring-core:' + springVersion)
+    compile('org.springframework:spring-context:' + springVersion)
+
+    compile('org.springframework.kafka:spring-kafka:2.4.1.RELEASE')
+
+    compile('ch.qos.logback:logback-classic:1.0.9')
+    compile('ch.qos.logback:logback-core:1.0.9')
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+    testCompile ('org.springframework:spring-test:' + springVersion)
+
+}
