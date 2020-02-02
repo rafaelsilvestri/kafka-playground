@@ -1,0 +1,90 @@
+2020-02-02 20:33:34.578 [main] INFO  com.github.rafaelsilvestri.kafka.consumer.Application - ===== STARTING CONSUMER =====
+2020-02-02 20:33:35.617 [main] INFO  org.apache.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = simpleListener
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-02-02 20:33:35.743 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka version: 2.4.0
+2020-02-02 20:33:35.743 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: 77a89fcf8d7fa018
+2020-02-02 20:33:35.743 [main] INFO  org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1580682815739
+2020-02-02 20:33:35.748 [main] INFO  org.apache.kafka.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-simpleListener-1, groupId=simpleListener] Subscribed to topic(s): topic1
+2020-02-02 20:33:35.752 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2020-02-02 20:33:35.764 [main] INFO  com.github.rafaelsilvestri.kafka.consumer.Application - ===== CONSUMER FINISHED =====
+2020-02-02 20:33:36.125 [simpleListener-0-C-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-simpleListener-1, groupId=simpleListener] Cluster ID: EfPzQLubRIqeole7jTiS2Q
+2020-02-02 20:33:36.127 [simpleListener-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-simpleListener-1, groupId=simpleListener] Discovered group coordinator 127.0.0.1:9092 (id: 2147483646 rack: null)
+2020-02-02 20:33:36.130 [simpleListener-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-simpleListener-1, groupId=simpleListener] (Re-)joining group
+2020-02-02 20:33:36.138 [simpleListener-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-simpleListener-1, groupId=simpleListener] (Re-)joining group
+2020-02-02 20:33:39.146 [simpleListener-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-simpleListener-1, groupId=simpleListener] Finished assignment for group at generation 17: {consumer-simpleListener-1-7a4e54ff-1dc1-4f50-93f4-ca540380ab81=org.apache.kafka.clients.consumer.ConsumerPartitionAssignor$Assignment@167e9f26}
+2020-02-02 20:33:39.155 [simpleListener-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-simpleListener-1, groupId=simpleListener] Successfully joined group with generation 17
+2020-02-02 20:33:39.159 [simpleListener-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-simpleListener-1, groupId=simpleListener] Adding newly assigned partitions: topic1-0
+2020-02-02 20:33:39.169 [simpleListener-0-C-1] INFO  org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-simpleListener-1, groupId=simpleListener] Setting offset for partition topic1-0 to the committed offset FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=127.0.0.1:9092 (id: 1 rack: null), epoch=-1}}
+2020-02-02 20:33:39.182 [simpleListener-0-C-1] INFO  org.springframework.kafka.listener.KafkaMessageListenerContainer - simpleListener: partitions assigned: [topic1-0]
+2020-02-02 20:33:56.099 [simpleListener-0-C-1] INFO  com.github.rafaelsilvestri.kafka.consumer.listener.SimpleConsumerListener - ===== EVENT RECEIVED ====
+2020-02-02 20:33:56.100 [simpleListener-0-C-1] INFO  com.github.rafaelsilvestri.kafka.consumer.listener.SimpleConsumerListener - [Event]: message 20:33:55.804708

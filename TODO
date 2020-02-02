@@ -1,0 +1,7 @@
+[X] Create a simple Java Producer
+[X] Create a simple Java Consumer
+[] Improve Producer by adding a REST API to ingress data
+[] Produce a Json object event
+[] Improve Consumer by adding support to database
+[] Create a CloudFormation script to provision AWS MSK
+[] Create scripts to start e stop gracefully
