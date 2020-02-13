@@ -20,3 +20,10 @@ $KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --to
 
 Consume a Kafka topic from the beginning
 $KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic my-first-topic --from-beginning
+
+
+
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"name":"Rafael","email":"rafaelcechinel@gmail.com","address":"Boulevard Street"}' \
+  http://localhost:8080/person

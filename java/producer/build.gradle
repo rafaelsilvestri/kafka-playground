@@ -1,14 +1,17 @@
 plugins {
-   id 'java'
-   id 'application'
-   id 'idea'
+    id 'java'
+    id 'scala'
+    id 'application'
+    id 'idea'
+
+    id "com.github.lkishalmi.gatling" version "3.2.9"
 }
 
 mainClassName = "com.github.rafaelsilvestri.kafka.producer.Application"
 
 jar {
     manifest {
-        attributes (
+        attributes(
                 "Main-Class": "com.github.rafaelsilvestri.kafka.producer.Application"
         )
     }
@@ -26,9 +29,14 @@ repositories {
     mavenCentral()
 }
 
+def gatlingVersion = '3.2.1'
+
 dependencies {
     def jacksonVersion = '2.10.1'
     def springVersion = '5.2.3.RELEASE'
+
+    compile('org.projectlombok:lombok:1.18.12')
+    annotationProcessor('org.projectlombok:lombok:1.18.12')
 
     compile('com.fasterxml.jackson.core:jackson-databind:' + jacksonVersion)
     compile('com.fasterxml.jackson.core:jackson-core:' + jacksonVersion)
@@ -37,19 +45,39 @@ dependencies {
     compile('org.springframework:spring-context:' + springVersion)
 
     compile('org.springframework:spring-webflux:' + springVersion)
-    compile ('io.projectreactor.netty:reactor-netty:0.9.4.RELEASE')
-    compile ('io.netty:netty-buffer:4.1.45.Final')
-
+    compile('io.projectreactor.netty:reactor-netty:0.9.4.RELEASE')
+    compile('io.netty:netty-buffer:4.1.45.Final')
 
 
     compile('org.springframework.kafka:spring-kafka:2.4.1.RELEASE')
 
-    compile ('org.apache.logging.log4j:log4j-api:2.13.0')
-    compile ('org.apache.logging.log4j:log4j-core:2.13.0')
-    compile ('org.apache.logging.log4j:log4j-slf4j-impl:2.13.0')
+    compile('org.apache.logging.log4j:log4j-api:2.13.0')
+    compile('org.apache.logging.log4j:log4j-core:2.13.0')
+    compile('org.apache.logging.log4j:log4j-slf4j-impl:2.13.0')
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
-    testCompile ('org.springframework:spring-test:' + springVersion)
+    testCompile('org.springframework:spring-test:' + springVersion)
 
+    gatlingCompile 'io.gatling:gatling-app:' + gatlingVersion
+    gatlingCompile 'io.gatling:gatling-core:' + gatlingVersion
+    gatlingCompile 'io.gatling:gatling-http:' + gatlingVersion
+    gatlingCompileOnly 'io.gatling.highcharts:gatling-charts-highcharts:' + gatlingVersion
+
+}
+
+gatling {
+    toolVersion = gatlingVersion
+    jvmArgs = [ '-server', '-Xms512M', '-Xmx512M' ]
+    // do not include classes and resources from src/main
+    includeMainOutput = false
+    // do not include classes and resources from src/test
+    includeTestOutput = false
+
+    simulations = {
+      include "**/*Simulation.scala"
+    }
+    //simulations = [
+    //        'com.github.rafaelsilvestri.PersonSimulation'
+   // ]
 }

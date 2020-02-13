@@ -6,11 +6,14 @@
             <PatternLayout pattern="[%highlight{%-5level}] %d{DEFAULT} %c{1}.%M() - %msg%n%throwable{short.lineNumber}" />
         </Console>
 
-        <RollingRandomAccessFile name="LogToRollingRandomAccessFile" fileName="logs/app.log"
+        <RollingRandomAccessFile name="LogToRollingRandomAccessFile" fileName="./logs/app.log"
                                  filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
-            <PatternLayout>
+            <!--PatternLayout>
                 <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
-            </PatternLayout>
+            </PatternLayout-->
+            <JsonLayout complete="true" compact="false">
+                <KeyValuePair key="myCustomField" value="myCustomValue" />
+            </JsonLayout>
             <Policies>
                 <TimeBasedTriggeringPolicy/>
                 <SizeBasedTriggeringPolicy size="1 MB"/>
