@@ -1,0 +1,24 @@
+{
+  "name": "kafka-playground",
+  "version": "1.0.0",
+  "description": "Kafka for Fun",
+  "main": "index.js",
+  "dependencies": {
+    "no-kafka": "^3.4.3",
+    "lodash": ">=4.17.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelsilvestri/kafka-playground.git"
+  },
+  "author": "Rafael Silvestri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelsilvestri/kafka-playground/issues"
+  },
+  "homepage": "https://github.com/rafaelsilvestri/kafka-playground#readme"
+}
