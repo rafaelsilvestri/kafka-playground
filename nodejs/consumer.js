@@ -14,5 +14,5 @@ var data = function (messageSet) {
 
 // Subscribe to the Kafka topic
 return consumer.init().then(function () {
-    return consumer.subscribe('topic1', data);
+    return consumer.subscribe('kafka-python-topic', data);
 });

@@ -1,7 +1,7 @@
 from kafka import KafkaProducer
 import json
 import random
-from time import sleep
+import time
 from datetime import datetime
 
 # Create an instance of the Kafka producer
@@ -11,4 +11,7 @@ producer = KafkaProducer(bootstrap_servers='localhost:9092',
 # Call the producer.send method with a producer-record
 print("Ctrl+c to Stop")
 while True:
-    producer.send('kafka-python-topic', random.randint(1,999))
+    message = random.randint(1,999)
+    producer.send('kafka-python-topic', message)
+    print(f'Message {message} sent.')
+    time.sleep(1)
